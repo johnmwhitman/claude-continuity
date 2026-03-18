@@ -1,0 +1,24 @@
+{
+  "name": "chromadb-memory",
+  "version": "1.1.0",
+  "description": "Persistent semantic memory for OpenClaw agents. Local ChromaDB + Ollama. Auto-recall injects relevant context every turn. Works offline.",
+  "author": "super-memory",
+  "homepage": "https://github.com/Jdubnwa/super-memory",
+  "keywords": ["memory", "chromadb", "ollama", "persistent", "local", "semantic", "rag"],
+  "license": "MIT",
+  "openclaw": {
+    "minVersion": "2026.3.2",
+    "type": "context-engine",
+    "hooks": ["bootstrap", "ingest", "assemble", "compact", "afterTurn"],
+    "contextEngine": true
+  },
+  "config": {
+    "chromaUrl":       { "type": "string",  "default": "http://localhost:8100",  "description": "ChromaDB server URL" },
+    "ollamaUrl":       { "type": "string",  "default": "http://localhost:11434", "description": "Ollama server URL" },
+    "embeddingModel":  { "type": "string",  "default": "nomic-embed-text",       "description": "Ollama embedding model" },
+    "recallN":         { "type": "integer", "default": 5,                        "description": "Memories to inject per turn" },
+    "minScore":        { "type": "number",  "default": 0.5,                      "description": "Minimum similarity score (0-1)" },
+    "autoSave":        { "type": "boolean", "default": true,                     "description": "Auto-save turns to memory" },
+    "collections":     { "type": "array",   "default": ["projects","people","decisions","knowledge","conversations","tasks"] }
+  }
+}

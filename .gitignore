@@ -1,0 +1,24 @@
+# Personal data — never commit these
+*.env
+.env*
+research_goals.json
+session_handoff.md
+proactive_items.txt
+morning_brief.txt
+usage_tracking.json
+backlog.json
+SYSTEM_PROMPT*.md
+*_ADVISORY.md
+*_PERSONAL*.md
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# ChromaDB data (personal)
+memory/
+backup/
+logs/research_briefs/

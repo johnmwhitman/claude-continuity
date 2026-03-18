@@ -1,0 +1,67 @@
+{
+  "version": "1.0",
+  "description": "Research goals template. Copy to research_goals.json and customize.",
+  "_instructions": [
+    "Set personal_context=true for sensitive goals (routes to Ollama only)",
+    "Frequencies: daily, weekly, biweekly, monthly",
+    "Models: sonnet (default), opus (critical), ollama (local/private)"
+  ],
+  "goals": [
+    {
+      "id": "industry-trends",
+      "title": "Your Industry \u2014 Trends and News",
+      "priority": "high",
+      "frequency": "weekly",
+      "active": true,
+      "personal_context": false,
+      "search_queries": [
+        "your industry trends 2026",
+        "your industry news this week"
+      ],
+      "output_format": "3 bullets: trend, why it matters, action.",
+      "tags": [
+        "industry",
+        "trends"
+      ]
+    },
+    {
+      "id": "ai-tools-weekly",
+      "title": "AI Tools \u2014 What's New",
+      "priority": "medium",
+      "frequency": "weekly",
+      "active": true,
+      "personal_context": false,
+      "search_queries": [
+        "new AI productivity tools 2026",
+        "Claude Anthropic updates 2026"
+      ],
+      "output_format": "3 bullets: tool, use case, try it.",
+      "tags": [
+        "ai",
+        "productivity"
+      ]
+    },
+    {
+      "id": "job-market-monitor",
+      "title": "Job Market \u2014 Your Role",
+      "priority": "high",
+      "frequency": "weekly",
+      "active": true,
+      "personal_context": true,
+      "search_queries": [
+        "director product management remote jobs 2026",
+        "senior product manager salary trends 2026"
+      ],
+      "output_format": "3 bullets: trend/opening, comp signal, action.",
+      "tags": [
+        "jobs",
+        "career"
+      ],
+      "_note": "personal_context=true routes to Ollama \u2014 never leaves your machine"
+    }
+  ],
+  "output_settings": {
+    "briefs_folder": "C:\\AI\\logs\\research_briefs\\",
+    "brief_filename_format": "{goal_id}_{YYYY-MM-DD}.txt"
+  }
+}
